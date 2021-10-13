@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="src/vue.js"></script>
+    <script src="src/axios.min.js"></script>
+    <script src="src/data.js"></script>
+    <link href="styles/styles.css" rel="stylesheet"></link>
+    <title>Vue - Pokédex</title>
+</head>
+<body>
+
+    <div id="app">
+        <div id="mainMenu">
+            <span>Filtra por nombre: </span>
+            <input v-model="filterName" placeholder="Pokémon name">
+            <input v-model="searchFav" type="checkbox" id="searchFav" value="searchFav"><span>Solo favs</span>
+        </div>
+        <ul>
+            <pokemon v-for="(pokemon, key) in pokemonFiltered"
+                     v-bind:pokemondata="pokemon"></pokemon>
+        </ul>
+    </div>
+    
+    <script src="src/code.js"></script>
+</body>
+</html>
